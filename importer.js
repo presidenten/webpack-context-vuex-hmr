@@ -3,7 +3,7 @@ const getModulesContext = () => require.context('.', false, /override-me-in-webp
 const getFileName = string => string.match(/[^\\|/]*(?=[.][a-zA-Z]+$)/)[0];
 let contextId;
 
-export default {
+module.exports = {
   /**
    * Returns an object with loaded modules
    */
