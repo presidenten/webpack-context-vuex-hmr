@@ -1,0 +1,24 @@
+{
+  "name": "webpack-context-vuex-hmr",
+  "version": "1.0.0",
+  "description": "Easy dynamic imports of Vuex modules with HMR",
+  "main": "importer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/presidenten/webpack-context-vuex-hmr.git"
+  },
+  "keywords": [
+    "Vuex",
+    "HMR",
+    "Webpack"
+  ],
+  "author": "Johan Hernefeldt <johans.inbox@gmail.com> (https://github.com/presidenten)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/presidenten/webpack-context-vuex-hmr/issues"
+  },
+  "homepage": "https://github.com/presidenten/webpack-context-vuex-hmr#readme"
+}
