@@ -37,7 +37,7 @@ import app from './app.vue';
 Vue.use(Vuex);
 
 // Get new importer instance
-const importer = require('webpack-context-vuex-hmr').getNewInstance();
+const importer = require('webpack-context-vuex-hmr');
 // Import all Vuex modules
 const modules = importer.getModules();
 // Create the Vuex store
