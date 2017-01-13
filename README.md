@@ -5,7 +5,7 @@ This module makes it easy to setup dynamic imports of Vuex modules using
 `require.context` and removes the boilerplate needed to update vuex using HMR when the modules are changed.
 
 ## Introduction
-A nice way to organize Vuex code is to structure into getters, actions and mutions into a single module file. However, depending on the size of the project it might be a pain to import them all into `main.js`. 
+A nice way to organize Vuex code is to structure into getters, actions and mutations into a single module file. However, depending on the size of the project it might be a pain to import them all into `main.js`. 
 Vue works very well with HMR using the vue-cli tempalte. But to make Vuex work with HMR, there is need for code duplication and some boring boilerplate to get the modules to be properly hot module replaced instead of live reloaded. This can be quite tedious for a large project.
 
 This package uses Webpack's `require.context` to dynamically load all Vuex modules using a preconfigured regexp and takes care of the necessary boilerplate to make HMR work with the dynamic context.  
