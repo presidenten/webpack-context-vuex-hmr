@@ -36,7 +36,7 @@ In this example the importer will look in `<project-path>/src` using recursive s
 Then in `main.js`:
 ```javascript
 // Import plugin
-import contextHmr from 'webpack-context-hmr';
+import contextHmr from 'webpack-context-vuex-hmr';
 // Normal imports
 import Vue from 'vue';
 import Vuex from 'vuex';
