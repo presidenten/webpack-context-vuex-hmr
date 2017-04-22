@@ -54,4 +54,3 @@ module.exports.getNewInstance = function () {
 
   return new Importer();
 };
-
