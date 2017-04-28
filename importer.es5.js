@@ -16,9 +16,7 @@ module.exports.getNewInstance = function () {
       contextId = context.id;
       context.keys().forEach(function (key) {
         var fileName = getFileName(key);
-        if (fileName.slice(-6) === '-store') {
-          modules[fileName] = context(key).default;
-        }
+        modules[fileName] = context(key).default;
       });
 
       return modules;
@@ -27,6 +25,8 @@ module.exports.getNewInstance = function () {
     this.setupHMR = function (hmrHandler) {
       if (module.hot) {
         module.hot.accept(contextId, function () {
+          var updatedModules = {};
+
           var reloadedContext = getModulesContext();
           var allModules = reloadedContext.keys().map(function (key) {
             return {
@@ -36,17 +36,16 @@ module.exports.getNewInstance = function () {
           });
 
           var newModules = allModules.filter(function (reloadedModule) {
-            return reloadedModule.name.slice(-6) === '-store';
-          }).filter(function (reloadedModule) {
             return modules[reloadedModule.name] !== reloadedModule.object;
           });
 
           newModules.forEach(function (module) {
             modules[module.name] = module.object;
+            updatedModules[module.name] = module.object;
             console.info('[HMR] - Modules are replaced');
           });
 
-          hmrHandler(modules);
+          hmrHandler(updatedModules);
         });
       }
     };
@@ -54,3 +53,4 @@ module.exports.getNewInstance = function () {
 
   return new Importer();
 };
+
