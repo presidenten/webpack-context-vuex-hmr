@@ -1,6 +1,6 @@
 {
   "name": "webpack-context-vuex-hmr",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Easy dynamic imports of Vuex modules with HMR",
   "main": "importer.es5.js",
   "scripts": {
