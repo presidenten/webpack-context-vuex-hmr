@@ -16,9 +16,7 @@ module.exports.getNewInstance = () => {
       contextId = context.id;
       context.keys().forEach((key) => {
         const fileName = getFileName(key);
-        if (fileName.slice(-6) === '-store') {
-          modules[fileName] = context(key).default;
-        }
+        modules[fileName] = context(key).default;
       });
 
       return modules;
@@ -47,7 +45,6 @@ module.exports.getNewInstance = () => {
             }));
 
           let newModules = allModules
-                            .filter(reloadedModule => reloadedModule.name.slice(-6) === '-store')
                             .filter(reloadedModule => modules[reloadedModule.name] !== reloadedModule.object);
 
           // Update changed modules

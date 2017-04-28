@@ -25,12 +25,12 @@ plugins: [
     /webpack-context-vuex-hmr$/,           // [leave me] this file
     path.resolve(process.cwd(), './src'),  // [edit me]  context root path
     true,                                  // [edit me]  recursive search
-    /-store.js|-substore.js$/              // [edit me]  regexp to find modules
+    /-store.js$/                           // [edit me]  regexp to find modules
   ),
 ],
 ```
 
-In this example the importer will look in `<project-path>/src` using recursive search through folders, looking for files ending with `-store.js` and `-substore.js`. This should be edited to match the projects naming conventions.
+In this example the importer will look in `<project-path>/src` using recursive search through folders, looking for files ending with `-store.js`. This should be edited to match the projects naming conventions.
 
 
 Then in `main.js`:
